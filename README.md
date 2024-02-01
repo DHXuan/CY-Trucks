@@ -1,3 +1,5 @@
+IMPORTANT : Le fichier.csv à traiter doit IMPERATIVEMENT être renommé sous le nom de data.csv avant de lancer les options !
+
 En lancant les commande suivantes nous pouvons lancer les différents traitements possibles :
 
 bash option.sh -d1 qui permet de lancer le traitement D1.
