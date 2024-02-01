@@ -96,7 +96,7 @@ pAVL rotaGauche(pAVL a) {
   a->equilibre = eqa - max2(eqp, 0) - 1;
   pivot->equilibre = min3(eqa - 2, eqa + eqp - 2, eqp - 1);
   a = pivot;
-   printf ("rota gauche faite\n");
+   //printf ("rota gauche faite\n");
   return a;
 
 }
@@ -115,7 +115,7 @@ pAVL rotaDroite(pAVL a) {
     a->equilibre = eqa + max2(-eqp, 0) + 1;  // Inverser les opérations pour la rotation droite
     pivot->equilibre = max3(eqa + 2, eqa + eqp + 2, eqp + 1);
     a = pivot;
-    printf ("rota droite faite\n");
+    //printf ("rota droite faite\n");
     return a;
 }
 
@@ -260,5 +260,4 @@ while (fscanf(fichier1, "%d", &a) == 1) {
 }
 
 //ResultFinalStats.txt à cut les 50 premiers avant de gnuplot.
-
 
