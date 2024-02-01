@@ -1,5 +1,8 @@
 #!/bin/bash
 
+gcc -o yy SE1.c
+gcc -o zz SE2.c
+
 start_time=$(date +%s.%s)
 awk -F";" '
 #pour chaque ligne à partir de la deuxième puisque jignore len tête 
