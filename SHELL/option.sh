@@ -39,8 +39,14 @@ fi
 if [ $# -eq 0 ]; then
     echo "Aucun argument fourni"
     exit 1
-fi
+fi*
 
+doccsv="$1"
+if[! -f"doccsv"]];then
+  echo "Le fichier CSV '$doccsv' est introuvable"
+  exit 1
+fi
+ 
 #une boucle qui parcourt tous les arguments 
 for arg in "$@"
 do
