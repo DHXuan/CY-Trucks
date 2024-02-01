@@ -1,8 +1,8 @@
 #!/bin/bash
 start_time=$(date +%s.%s)
-cut -d';' -f1,6 data.csv | sort -n -t';' -k1 | uniq | sort -d -t';' -k2 > /temp/trajets.txt
-cut -d';' -f2 trajets.txt | sort | uniq -c | sort -nr -t';' | head -10 > /temp/results.txt 
-awk '{print $1 ";" $2 " "$3}' /temp/results.txt > /resultats/combi.txt
+cut -d';' -f1,6 data.csv | sort -n -t';' -k1 | uniq | sort -d -t';' -k2 > /home/temp/trajets.txt
+cut -d';' -f2 trajets.txt | sort | uniq -c | sort -nr -t';' | head -10 > /home/temp/results.txt 
+awk '{print $1 ";" $2 " "$3}' /home/temp/results.txt > /home/resultats/combi.txt
 
 #creation de l'histogramme à l'horizontal avec gnuplot
 
@@ -31,7 +31,7 @@ set xlabel "Nombre de routes"
 set ylabel "Nom des conducteurs" 
 
 #charger les donnees depuis le fichier 
-plot '/resulmtats/combi.txt' using (\$1*0.5):0:(\$1*0.5):(0.4):yticlabels(2) with boxxyerrorbars lc rgb "#4863A0" notitle
+plot '/home/resulmtats/combi.txt' using (\$1*0.5):0:(\$1*0.5):(0.4):yticlabels(2) with boxxyerrorbars lc rgb "#4863A0" notitle
 EOF
 end_time=$(date +%s.%s)
 elapsed_time=$(echo "$end_time - $start_time" | bc)
