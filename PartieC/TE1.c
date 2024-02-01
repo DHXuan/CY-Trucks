@@ -332,7 +332,7 @@ int main(){
     racine = ajouterAVLAlphaArrivee(racine, str, RID, h);
   }
   
-  parcoursInfixe(racine);
+  //parcoursInfixe(racine);
   
   AVLTrie = creerAVLTrie(AVLTrie, racine, &i);
   parcoursInfixev2(AVLTrie,fichier3);
