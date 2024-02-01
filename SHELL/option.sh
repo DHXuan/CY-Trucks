@@ -54,9 +54,9 @@ do
   case "$arg" in
     -d1)
       if [ -n "$traitementD1_path" ]; then
-        chmod +x "$traitementD1_path"
+        chmod +x "$traitementD1_path "
         echo "Exécution du script traitementD1.sh"
-        "$traitementD1_path"
+        "$traitementD1_path $1"
       else
         echo "Le script traitementD1.sh n'a pas été trouvé."
       fi
@@ -65,7 +65,7 @@ do
       if [ -n "$traitementD2_path" ]; then
         chmod +x "$traitementD2_path"
         echo "Exécution du script traitementD2.sh"
-        "$traitementD2_path"
+        "$traitementD2_path $1"
       else
         echo "Le script traitementD2.sh n'a pas été trouvé."
       fi
@@ -74,7 +74,7 @@ do
       if [ -n "$traitementL_path" ]; then
         chmod +x "$traitementL_path"
         echo "Exécution du script traitementL.sh"
-        "$traitementL_path"
+        "$traitementL_path $1"
       else
         echo "Le script traitementL.sh n'a pas été trouvé."
       fi
