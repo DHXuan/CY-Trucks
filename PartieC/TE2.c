@@ -172,9 +172,9 @@ int main(){
 	FILE* fichier2 = fopen("T.txt","w");
 	
 	while (fscanf(fichier,"%d %d %[^\n]", &tot, &dep, ville)==3){
-		printf("%s ", ville);
-		printf("%d ",tot);
-		printf("%d \n",dep);
+		//printf("%s ", ville);
+		//printf("%d ",tot);
+		//printf("%d \n",dep);
 		racine = ajouterAVL(racine, ville, tot, dep, &h);
 	}
 	
