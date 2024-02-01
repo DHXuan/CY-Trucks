@@ -22,4 +22,4 @@ script:
 	chmod 777 TE2.c
 	sh option.sh data.csv
 	sh T.sh
-	
+	sh S.sh
