@@ -310,9 +310,9 @@ int main(){
   // top10* pliste = NULL;
   pAVL AVLTrie = NULL;
 
-  FILE* fichier = fopen("./temp/departs.txt", "r");
-  FILE* fichier2 = fopen("./temp/arrivees.txt", "r");
-  FILE* fichier3 = fopen("./temp/T_Results.txt","a");
+  FILE* fichier = fopen("departs.txt", "r");
+  FILE* fichier2 = fopen("arrivees.txt", "r");
+  FILE* fichier3 = fopen("T_Results.txt","a");
 
   if (fichier == NULL){
     printf("Erreur lors de l'ouverture du fichier");
