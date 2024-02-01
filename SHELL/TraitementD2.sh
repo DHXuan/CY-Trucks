@@ -2,7 +2,7 @@
 start_time=$(date +%s.%s)
 LC_NUMERIC=C awk -F';' '{sum[$6] += $5} END {for (name in sum) printf "%s %f\n", name, sum[name]}' data.csv >somme.txt
 sort -t' ' -k3 -rn somme.txt > somme2.txt
-head -10 ./temps/somme2.txt | awk '{print $1 " " $2 ";" $3}' >somme3.txt
+head -10 somme2.txt | awk '{print $1 " " $2 ";" $3}' >somme3.txt
 
 gnuplot<<EOF
 set terminal png font "helvetica, 10"
