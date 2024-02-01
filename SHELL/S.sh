@@ -59,7 +59,7 @@ set ylabel "Distance (km)" offset char 1, char 0 #je le decale un peu à droite
 set title "Option -s : Distance = f(Route)"
 
 #charger les donnees depuis le fichier 
-plot 'Statsfinales.txt' using 2:xticlabels(1) with lines title 'Distances Max/Min (Km)' lc rgb "skyblue", '' u 4:xticlabels(1) with lines title "" lc rgb "skyblue", '' u 3 with lines title 'Distance moyenne (km)' lc rgb "#4863A0"
+plot 'StatsFinales.txt' using 2:xticlabels(1) with lines title 'Distances Max/Min (Km)' lc rgb "skyblue", '' u 4:xticlabels(1) with lines title "" lc rgb "skyblue", '' u 3 with lines title 'Distance moyenne (km)' lc rgb "#4863A0"
 EOF
 
 
