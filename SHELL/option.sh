@@ -1,13 +1,13 @@
 #!/bin/bash
 
-file_path=$(find .. -iname "data.csv")
-Images_path=$(find . -type d -name "Images" -print -quit)
-Temps_path=$(find . -type d -name "Temps" -print -quit)
-traitementD1_path=$(find . -iname "traitementD1.sh" -print -quit)
-traitementD2_path=$(find . -iname "traitementD2.sh" -print -quit)
-traitementL_path=$(find . -iname "traitementL.sh" -print -quit)
-traitementS_path=$(find . -iname "traitementS.sh" -print -quit)
-traitementT_path=$(find . -iname "traitementT.sh" -print -quit)
+file_path=$(find .. -iname "data.csv") 2>/dev/null
+Images_path=$(find . -type d -name "Images" -print -quit) 2>/dev/null
+Temps_path=$(find . -type d -name "Temps" -print -quit) 2>/dev/null
+traitementD1_path=$(find . -iname "traitementD1.sh" -print -quit) 2>/dev/null
+traitementD2_path=$(find . -iname "traitementD2.sh" -print -quit) 2>/dev/null
+traitementL_path=$(find . -iname "traitementL.sh" -print -quit) 2>/dev/null
+traitementS_path=$(find . -iname "traitementS.sh" -print -quit) 2>/dev/null
+traitementT_path=$(find . -iname "traitementT.sh" -print -quit) 2>/dev/null
 
 chmod +x option.sh
 
