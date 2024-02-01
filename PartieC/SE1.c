@@ -92,11 +92,11 @@ int main() {
 
   //on récurèpe les données du fichiers et on les insère dans une liste chainée
   while (fscanf(fichier, "%d", &a) == 1) {
-    printf("a=%d\n", a);
+    //printf("a=%d\n", a);
 
     fscanf(fichier, "%f", &b);
 
-    printf("b=%f\n", b);
+    //printf("b=%f\n", b);
     pliste = insertDebut(pliste, a, b);
 
   }
