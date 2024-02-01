@@ -1,8 +1,5 @@
 #!/bin/bash
 
-gcc -o yy SE1.c
-gcc -o zz SE2.c
-
 start_time=$(date +%s.%s)
 awk -F";" '
 #pour chaque ligne à partir de la deuxième puisque jignore len tête 
@@ -24,13 +21,13 @@ awk -F";" '
         for (i = 1; i <= count; i++) {
             print data[order[i]]
         }
-    } ' data.csv > donnees.txt
+    } ' data.csv > /temps/donnees.txt
  
 ./yy
 
 ./zz
 
-head -50 ResultFinalStats.txt > StatsFinales.txt 
+head -50 /temps/ResultFinalStats.txt > StatsFinales.txt 
 
 gnuplot<<EOF
 set terminal png font "helvetica, 10" size 1000,800
@@ -67,6 +64,6 @@ end_time=$(date +%s.%s)
 elapsed_time=$(echo "$end_time - $start_time" | bc)
 echo "Temps écoulé : $elapsed_time secondes"
 
-rm donnees.txt
-rm StatsTrajets.txt
+rm /temps/donnees.txt
+rm /temps/StatsTrajets.txt
 rm ResultFinalStats.txt     
