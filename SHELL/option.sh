@@ -39,14 +39,8 @@ fi
 if [ $# -eq 0 ]; then
     echo "Aucun argument fourni"
     exit 1
-fi*
-
-doccsv="$1"
-if[! -f"doccsv"]];then
-  echo "Le fichier CSV '$doccsv' est introuvable"
-  exit 1
 fi
- 
+
 #une boucle qui parcourt tous les arguments 
 for arg in "$@"
 do
@@ -54,9 +48,9 @@ do
   case "$arg" in
     -d1)
       if [ -n "$traitementD1_path" ]; then
-        chmod +x "$traitementD1_path "
+        chmod +x "$traitementD1_path"
         echo "Exécution du script traitementD1.sh"
-        "$traitementD1_path $1"
+        "$traitementD1_path"
       else
         echo "Le script traitementD1.sh n'a pas été trouvé."
       fi
@@ -65,7 +59,7 @@ do
       if [ -n "$traitementD2_path" ]; then
         chmod +x "$traitementD2_path"
         echo "Exécution du script traitementD2.sh"
-        "$traitementD2_path $1"
+        "$traitementD2_path"
       else
         echo "Le script traitementD2.sh n'a pas été trouvé."
       fi
@@ -74,21 +68,35 @@ do
       if [ -n "$traitementL_path" ]; then
         chmod +x "$traitementL_path"
         echo "Exécution du script traitementL.sh"
-        "$traitementL_path $1"
+        "$traitementL_path"
       else
         echo "Le script traitementL.sh n'a pas été trouvé."
       fi
       ;;
-    -h)
-      if [ -n "$aide_path" ]; then
-        cat explication.txt
-        echo "Voici le message d'aide"
+     -t)
+      if [ -n "$traitementT_path" ]; then
+        chmod +x "$traitementT_path"
+        echo "Exécution du script traitementT.sh"
+        "$traitementT_path"
       else
-        echo "Le script aide.sh n'a pas été trouvé."
+        echo "Le script traitementT.sh n'a pas été trouvé."
       fi
       ;;
+     -s)
+      if [ -n "$traitementS_path" ]; then
+        chmod +x "$traitementS_path"
+        echo "Exécution du script traitementS.sh"
+        "$traitementS_path"
+      else
+        echo "Le script traitementS.sh n'a pas été trouvé."
+      fi
+      ;;
+    -h)
+      	echo "Voici le message d'aide"
+        cat explication.txt
+      ;;
     *)
-      echo "Option invalide : $arg. Les options valides sont -d1, -d2, -l, -h"
+      echo "Option invalide : $arg. Les options valides sont -d1, -d2, -l, -t, -s, -h"
       ;;
   esac
 done
