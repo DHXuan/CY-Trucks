@@ -1,8 +1,8 @@
 #!/bin/bash
 start_time=$(date +%s.%s)
-LC_NUMERIC=C awk -F';' '{sum[$1] += $5} END {for (name in sum) printf "%s %f\n", name, sum[name]}' data.csv > ./temps/somme_trajet.txt
-sort -k2,2rn ./temps/somme_trajet.txt | head -10  > ./temps/resultat_trajet.txt
-sort -rn ./temps/resultat_trajet.txt > ./resultats/resultat_final.txt
+LC_NUMERIC=C awk -F';' '{sum[$1] += $5} END {for (name in sum) printf "%s %f\n", name, sum[name]}' data.csv >somme_trajet.txt
+sort -k2,2rn somme_trajet.txt | head -10  > resultat_trajet.txt
+sort -rn resultat_trajet.txt > resultat_final.txt
 
 gnuplot<<EOF
 set terminal png font "helvetica, 10" size 1000,800
@@ -23,7 +23,7 @@ set xlabel "Route ID"
 set ylabel "Distance" 
 
 #charger les donnees depuis le fichier 
-plot './resultats/resultat_final.txt' using 2:xticlabels(1) with boxes lc rgb "skyblue" notitle
+plot 'resultat_final.txt' using 2:xticlabels(1) with boxes lc rgb "skyblue" notitle
 EOF
 end_time=$(date +%s.%s)
 elapsed_time=$(echo "$end_time - $start_time" | bc)
