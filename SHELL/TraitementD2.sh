@@ -1,8 +1,8 @@
 #!/bin/bash
 start_time=$(date +%s.%s)
-LC_NUMERIC=C awk -F';' '{sum[$6] += $5} END {for (name in sum) printf "%s %f\n", name, sum[name]}' data.csv > somme.txt
-sort -t' ' -k3 -rn somme.txt > somme2.txt
-head -10 somme2.txt | awk '{print $1 " " $2 ";" $3}' > somme3.txt
+LC_NUMERIC=C awk -F';' '{sum[$6] += $5} END {for (name in sum) printf "%s %f\n", name, sum[name]}' data.csv > /home/temps/somme.txt
+sort -t' ' -k3 -rn /home/temps/somme.txt > /home/temps/somme2.txt
+head -10 /home/temps/somme2.txt | awk '{print $1 " " $2 ";" $3}' > /home/resultats/somme3.txt
 
 gnuplot<<EOF
 set terminal png font "helvetica, 10"
@@ -27,7 +27,7 @@ set ylabel "Nom des conducteurs" offset char 1, char 0 #je le decale un peu à d
 set title "Option -d2 : Distance = f(driver)"
 
 #charger les donnees depuis le fichier 
-plot 'somme3.txt' using (\$2*0.5):0:(\$2*0.5):(0.4):yticlabels(1) with boxxyerrorbars lc rgb "#4863A0" notitle
+plot '/home/resultats/somme3.txt' using (\$2*0.5):0:(\$2*0.5):(0.4):yticlabels(1) with boxxyerrorbars lc rgb "#4863A0" notitle
 EOF
 end_time=$(date +%s.%s)
 elapsed_time=$(echo "$end_time - $start_time" | bc)
