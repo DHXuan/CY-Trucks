@@ -5,11 +5,11 @@ gcc -o nn TE2.c
 
 start_time=$(date +%s.%s)
 
-cut -f1,3 -d";" data.csv | tail -n +2 > /temps/departs.txt
-cut -f1,4 -d";" data.csv | tail -n +2 > /temps/arrivees.txt
+cut -f1,3 -d";" data.csv | tail -n +2 > /home/temps/departs.txt
+cut -f1,4 -d";" data.csv | tail -n +2 > /home/temps/arrivees.txt
 
 ./xx
-head -10 /temps/T_Results.txt > /resultats/10T_Results.txt
+head -10 /home/temps/T_Results.txt > /home/resultats/10T_Results.txt
 ./nn
 
 gnuplot<<EOF
@@ -39,14 +39,14 @@ set ylabel "Nb routes" offset char 1, char 0 #je le decale un peu à droite
 set title "Option -t : Nb routes = f(Villes)"
 
 #charger les donnees depuis le fichier 
-plot '/resultats/T.txt' using 2:xticlabels(1) title 'Total routes' lc rgb "skyblue", '' u 3 title 'ville départ' lc rgb "#4863A0"
+plot '/home/resultats/T.txt' using 2:xticlabels(1) title 'Total routes' lc rgb "skyblue", '' u 3 title 'ville départ' lc rgb "#4863A0"
 EOF
 
 end_time=$(date +%s.%s)
 elapsed_time=$(echo "$end_time - $start_time" | bc)
 echo "Temps écoulé : $elapsed_time secondes"
 
-rm /temps/departs.txt
-rm /temps/arrivees.txt
-rm /temps/T_Results.txt
-rm /resultats/10T_Results.txt
+rm /home/temps/departs.txt
+rm /home/temps/arrivees.txt
+rm /home/temps/T_Results.txt
+rm /home/resultats/10T_Results.txt
