@@ -1,7 +1,7 @@
 #!/bin/bash
-doccsv="$1"
+
 start_time=$(date +%s.%s)
-cut -d';' -f1,6 doccsv | sort -n -t';' -k1 | uniq | sort -d -t';' -k2 > ./temp/trajets.txt
+cut -d';' -f1,6 data.csv | sort -n -t';' -k1 | uniq | sort -d -t';' -k2 > ./temp/trajets.txt
 cut -d';' -f2 trajets.txt | sort | uniq -c | sort -nr -t';' | head -10 > ./temp/results.txt 
 awk '{print $1 ";" $2 " "$3}' ./temp/results.txt > ./resultats/combi.txt
 
