@@ -214,8 +214,8 @@ void parcoursDRG(pAVL a, FILE * f) {
 int main() {
   FILE* fichier1;
   FILE* fichier2;
-  fichier1 = fopen("./temp/StatsTrajets.txt", "r"); //ouverture mode lecture du fichier StatsTrajets.txt contenant les stats suivantes sur l'ensemble des trajets : Route ID, Min, Max, Moy, Diff
-  fichier2 = fopen("./resultats/ResultFinalStats.txt", "a"); //ouverture en mode ajout "add" d'un nouveau fichier.
+  fichier1 = fopen("StatsTrajets.txt", "r"); //ouverture mode lecture du fichier StatsTrajets.txt contenant les stats suivantes sur l'ensemble des trajets : Route ID, Min, Max, Moy, Diff
+  fichier2 = fopen("ResultFinalStats.txt", "a"); //ouverture en mode ajout "add" d'un nouveau fichier.
   int a; //ID de la route
   float b; // minimum
   float c; // maximum
