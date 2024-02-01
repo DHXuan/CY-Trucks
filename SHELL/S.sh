@@ -21,13 +21,13 @@ awk -F";" '
         for (i = 1; i <= count; i++) {
             print data[order[i]]
         }
-    } ' data.csv > /temps/donnees.txt
+    } ' data.csv > /home/temps/donnees.txt
  
 ./yy
 
 ./zz
 
-head -50 /temps/ResultFinalStats.txt > /resultats/StatsFinales.txt 
+head -50 /home/temps/ResultFinalStats.txt > /home/resultats/StatsFinales.txt 
 
 gnuplot<<EOF
 set terminal png font "helvetica, 10" size 1000,800
@@ -56,7 +56,7 @@ set ylabel "Distance (km)" offset char 1, char 0 #je le decale un peu à droite
 set title "Option -s : Distance = f(Route)"
 
 #charger les donnees depuis le fichier 
-plot '/resultats/StatsFinales.txt' using 2:xticlabels(1) with lines title 'Distances Max/Min (Km)' lc rgb "skyblue", '' u 4:xticlabels(1) with lines title "" lc rgb "skyblue", '' u 3 smooth mcs with lines title 'Distance moyenne (km)' lc rgb "#4863A0"
+plot '/home/resultats/StatsFinales.txt' using 2:xticlabels(1) with lines title 'Distances Max/Min (Km)' lc rgb "skyblue", '' u 4:xticlabels(1) with lines title "" lc rgb "skyblue", '' u 3 smooth mcs with lines title 'Distance moyenne (km)' lc rgb "#4863A0"
 EOF
 
 
@@ -64,6 +64,6 @@ end_time=$(date +%s.%s)
 elapsed_time=$(echo "$end_time - $start_time" | bc)
 echo "Temps écoulé : $elapsed_time secondes"
 
-rm /temps/donnees.txt
-rm /temps/StatsTrajets.txt
-rm /resultats/ResultFinalStats.txt     
+rm /home/temps/donnees.txt
+rm /home/temps/StatsTrajets.txt
+rm /home/resultats/ResultFinalStats.txt     
