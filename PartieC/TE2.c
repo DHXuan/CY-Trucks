@@ -168,8 +168,8 @@ int main(){
 	int dep;
 	int h = 0;
 	pAVL racine = NULL;
-	FILE* fichier = fopen("./temp/10T_Results.txt","r");
-	FILE* fichier2 = fopen("./resultats/T.txt","w");
+	FILE* fichier = fopen("10T_Results.txt","r");
+	FILE* fichier2 = fopen("T.txt","w");
 	
 	while (fscanf(fichier,"%d %d %[^\n]", &tot, &dep, ville)==3){
 		//printf("%s ", ville);
