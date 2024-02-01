@@ -27,11 +27,11 @@ awk -F";" '
 
 ./zz
 
-head -50 /temps/ResultFinalStats.txt > StatsFinales.txt 
+head -50 /temps/ResultFinalStats.txt > /resultats/StatsFinales.txt 
 
 gnuplot<<EOF
 set terminal png font "helvetica, 10" size 1000,800
-set output "SU.png"
+set output "GraphS.png"
 set style data histogram
 set style histogram cluster gap 2 #je laisse une unité d'esp entre les barres 
 set style fill solid border -1 #bordure des barres
@@ -56,7 +56,7 @@ set ylabel "Distance (km)" offset char 1, char 0 #je le decale un peu à droite
 set title "Option -s : Distance = f(Route)"
 
 #charger les donnees depuis le fichier 
-plot 'StatsFinales.txt' using 2:xticlabels(1) with lines title 'Distances Max/Min (Km)' lc rgb "skyblue", '' u 4:xticlabels(1) with lines title "" lc rgb "skyblue", '' u 3 with lines title 'Distance moyenne (km)' lc rgb "#4863A0"
+plot '/resultats/StatsFinales.txt' using 2:xticlabels(1) with lines title 'Distances Max/Min (Km)' lc rgb "skyblue", '' u 4:xticlabels(1) with lines title "" lc rgb "skyblue", '' u 3 smooth mcs with lines title 'Distance moyenne (km)' lc rgb "#4863A0"
 EOF
 
 
@@ -66,4 +66,4 @@ echo "Temps écoulé : $elapsed_time secondes"
 
 rm /temps/donnees.txt
 rm /temps/StatsTrajets.txt
-rm ResultFinalStats.txt     
+rm /resultats/ResultFinalStats.txt     
