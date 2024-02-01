@@ -88,7 +88,7 @@ int main() {
   printf("start\n");
 
   //ouverture du fichier
-  fichier = fopen("/temp/donnees.txt", "r");
+  fichier = fopen("home/temp/donnees.txt", "r");
 
   //on récurèpe les données du fichiers et on les insère dans une liste chainée
   while (fscanf(fichier, "%d", &a) == 1) {
@@ -109,7 +109,7 @@ int main() {
 
   FILE * fichier2;
   // Ouvre le fichier.txt en mode écriture = fichier dans lequel on écrit
-  fichier2 = fopen("/temp/StatsTrajets.txt", "a");
+  fichier2 = fopen("home/temp/StatsTrajets.txt", "a");
   // ordre des données : Route ID, distance minimum, distance maximum, distance moyenne,
 
   // Vérifie si le fichier a été ouvert avec succès
