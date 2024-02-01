@@ -169,14 +169,13 @@ int main(){
 	int h = 0;
 	pAVL racine = NULL;
 	FILE* fichier = fopen("10T_Results.txt","r");
-	FILE* fichier2 = fopen("T.txt","a");
+	FILE* fichier2 = fopen("T.txt","w");
 	
 	while (fscanf(fichier,"%d %d %[^\n]", &tot, &dep, ville)==3){
 		printf("%s ", ville);
 		printf("%d ",tot);
 		printf("%d \n",dep);
 		racine = ajouterAVL(racine, ville, tot, dep, &h);
-		printf("insertion réussi\n");
 	}
 	
 	parcoursInfixev2(racine,fichier2);
@@ -191,5 +190,4 @@ int main(){
 
 	
 	 
-
 
