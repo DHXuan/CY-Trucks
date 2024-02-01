@@ -5,11 +5,11 @@ gcc -o nn TE2.c
 
 start_time=$(date +%s.%s)
 
-cut -f1,3 -d";" data.csv | tail -n +2 > departs.txt
-cut -f1,4 -d";" data.csv | tail -n +2 > arrivees.txt
+cut -f1,3 -d";" data.csv | tail -n +2 > /temps/departs.txt
+cut -f1,4 -d";" data.csv | tail -n +2 > /temps/arrivees.txt
 
 ./xx
-head -10 T_Results.txt > 10T_Results.txt
+head -10 /temps/T_Results.txt > /Resultats/10T_Results.txt
 ./nn
 
 gnuplot<<EOF
@@ -46,7 +46,7 @@ end_time=$(date +%s.%s)
 elapsed_time=$(echo "$end_time - $start_time" | bc)
 echo "Temps écoulé : $elapsed_time secondes"
 
-rm departs.txt
-rm arrivees.txt
-rm T_Results.txt
+rm /temps/departs.txt
+rm /temps/arrivees.txt
+rm /temps/T_Results.txt
 rm 10T_Results.txt
