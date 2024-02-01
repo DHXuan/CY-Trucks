@@ -11,6 +11,30 @@ traitementT_path=$(find . -iname "traitementT.sh" -print -quit) 2>/dev/null
 
 chmod +x option.sh
 
+if [ -e "$file_path" ]; then
+ echo "le fichier data.csv existe"
+ echo "$file_path"
+fi
+
+if [ -n "$Images_path" ]; then
+  echo "Le dossier Images existe et il va etre vidé"
+  rm -r "$Images_path"/*
+  echo " Le dossier a été vidé"
+else
+  echo "Le dossier Images n'existe pas et il va être créer"
+  mkdir -p "Images"
+fi
+
+if [ -n "$Temps_path" ]; then
+  echo "Le dossier Temps existe et il va etre vidé"
+  rm -r "$Temps_path"/*
+  echo " Le dossier a été vidé"
+else
+  echo "Le dossier Temps n'existe pas et il va être créer"
+  mkdir -p "Temps"
+fi
+
+
 #verifie que je passe un argument
 if [ $# -eq 0 ]; then
     echo "Aucun argument fourni"
