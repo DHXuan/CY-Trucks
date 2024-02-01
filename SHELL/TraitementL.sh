@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 start_time=$(date +%s.%s)
 LC_NUMERIC=C awk -F';' '{sum[$1] += $5} END {for (name in sum) printf "%s %f\n", name, sum[name]}' data.csv > somme_trajet.txt
 sort -k2,2rn somme_trajet.txt | head -10  > resultat_trajet.txt
