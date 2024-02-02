@@ -9,7 +9,7 @@ awk '{print $1 ";" $2 " "$3}' results.txt > combi.txt
 
 gnuplot<<EOF
 set terminal png font "helvetica,9"
-set output "graphD1.png"
+set output "~/Images/graphD1.png"
 set style data histogram
 set view map
 set style histogram cluster gap 2 #je laisse une unité d'esp entre les barres 
