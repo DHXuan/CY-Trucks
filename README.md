@@ -17,7 +17,7 @@ Le traitement D2 met un temps d'enivron 4 secondes
 
 Le traitement L met un temps d"enivron 8 secondes
 
-Le traitement T met un temps d'enivron 200 secondes
+Le traitement T met un temps d'enivron 300 secondes
 
 Le traitement S met un temps d'enivron 80 secondes
 
