@@ -1,0 +1,16 @@
+Les différentes options disponibles sont:
+
+option-d1 permet de lancer le traitement D1.
+Le traitement D1 fait un graphique horizontale permettant de voir les 10 conducteurs ayant effectués le plus de trajets.
+
+option-d2 permet de lancer le traitement D2.
+Le traitement D2 fait un graphique horizontale permettant de voir les 10 conducteurs ayant parcourue le plus de kilomètre.
+
+option-L permet de lancer le traitement L.
+Le traitement L fait un graphique verticale permettant de  voir les 10 trajets ayant la distance la plus grande.
+
+option-S permet de lancer le traitement S.
+Le traitement S fait un nuage de point permettant de voir les 50 trajets ayant la plus grande différence entre le min et le max. 
+
+option-T permet de lancer le traitement T.
+Le traitement T fait un graphique permettant de voir les 10 villes le plus passé par l'ensemble des trajets et de montrer combien de fois elle sont villes de départ.
