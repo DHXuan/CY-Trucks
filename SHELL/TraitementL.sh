@@ -14,7 +14,7 @@ set style fill solid border -1 #bordure des barres
 set boxwidth 0.5 # determine la largeur des barres
 
 set xrange [*:*] 
-set xtics 
+set xtics
 set yrange [0:3000]
 set ytics nomirror #on configure de telle sorte que on supp les marqueurs du cote droit de laxe des y 
 
