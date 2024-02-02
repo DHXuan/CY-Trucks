@@ -1,7 +1,7 @@
 #!/bin/bash
-chmod 777 Traitement.sh
-gcc -o xx TE1.c
-gcc -o nn TE2.c 
+chmod 777 TraitementT.sh
+gcc -o xx ~/PartieC/TE1.c
+gcc -o nn ~/PartieC/TE2.c 
 
 start_time=$(date +%s.%s)
 
