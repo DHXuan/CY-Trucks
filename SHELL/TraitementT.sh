@@ -1,5 +1,5 @@
 #!/bin/bash
-chmod 777 TraitementT.sh
+chmod 777 T.sh
 gcc -o xx TE1.c
 gcc -o nn TE2.c 
 
