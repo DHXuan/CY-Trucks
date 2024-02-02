@@ -21,7 +21,7 @@ Le traitement T met un temps d'enivron 200~500 secondes en fonction de l'efficac
 
 Le traitement S met un temps d'enivron 80 secondes
 
-AVANT DE LANCER : Créer un dossier PartieC contenant les différents programmes c (SE1, SE2, TE1 et TE2).
+AVANT DE LANCER : Créer un dossier PartieC contenant directement les différents programmes c (SE1, SE2, TE1 et TE2) (ne pas importer le répertoire SHELL).
 
 Placer ce dossier (PartieC) dans le même répertoire contenant les traitements (TraitementS.sh, TraitementT.sh, TraitementD1.sh, etc).
 
