@@ -6,7 +6,7 @@ sort -rn resultat_trajet.txt > resultat_final.txt
 
 gnuplot<<EOF
 set terminal png font "helvetica, 10" size 1000,800
-set output "graphDL.png"
+set output "~/Images/graphDL.png"
 set title "Option -l Distance =f(Route)"
 set style data histogram
 set style histogram cluster gap 2 #je laisse une unité d'esp entre les barres 
