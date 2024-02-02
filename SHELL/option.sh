@@ -9,7 +9,7 @@ traitementL_path=$(find . -iname "TraitementL.sh" -print -quit) 2>/dev/null
 traitementS_path=$(find . -iname "TraitementS.sh" -print -quit) 2>/dev/null
 traitementT_path=$(find . -iname "TraitementT.sh" -print -quit) 2>/dev/null
 
-chmod +x option.sh
+chmod 777 option.sh
 
 if [ -e "$file_path" ]; then
  echo "le fichier data.csv existe"
