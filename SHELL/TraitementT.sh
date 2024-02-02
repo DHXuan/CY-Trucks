@@ -7,6 +7,7 @@ start_time=$(date +%s.%s)
 
 cut -f1,3 -d";" data.csv | tail -n +2 > departs.txt
 cut -f1,4 -d";" data.csv | tail -n +2 > arrivees.txt
+cut -f2,3 -d";" data.csv | tail -n +2 > STEP.txt
 
 ./xx
 head -10 T_Results.txt > 10T_Results.txt
@@ -50,3 +51,4 @@ rm departs.txt
 rm arrivees.txt
 rm T_Results.txt
 rm 10T_Results.txt
+rm STEP.txt
