@@ -34,7 +34,7 @@ head -50 ResultFinalStats.txt > StatsFinales.txt
 
 gnuplot<<EOF
 set terminal png font "helvetica, 10" size 1000,800
-set output "GraphS.png"
+set output "~/Images/GraphS.png"
 set style data histogram
 set style histogram cluster gap 2 #je laisse une unité d'esp entre les barres 
 set style fill solid border -1 #bordure des barres
