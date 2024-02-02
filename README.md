@@ -20,3 +20,8 @@ Le traitement L met un temps d"enivron 8 secondes
 Le traitement T met un temps d'enivron 200 secondes
 
 Le traitement S met un temps d'enivron 80 secondes
+
+AVANT DE LANCER : Créer un dossier PartieC contenant les différents programmes c (SE1, SE2, TE1 et TE2).
+
+Placer ce dossier (PartieC) dans le même répertoire contenant les traitements (TraitementS.sh, TraitementT.sh, TraitementD1.sh, etc).
+
