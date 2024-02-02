@@ -5,6 +5,7 @@
 //au prealable sur UNIX
 //cut -f1,3 -d";" data.csv | tail -n +2 > departs.txt
 //cut -f1,4 -d";" data.csv | tail -n +2 > arrivees.txt
+//cut -f2,3 -d";" data.csv | tail -n +2 > STEP.txt
 
 int min2(int a, int b){
   if (a <= b) {
@@ -65,7 +66,7 @@ pAVL creerAVL(char *ville, int val){
   strcpy(n->ville, ville);
   n->pliste = creerRID(val);
   n->nbpassage = 1;
-  n->nbdeparts = 1;
+  n->nbdeparts = 0;
   n->fg = NULL;
   n->fd = NULL;
   n->equilibre = 0;
@@ -159,7 +160,7 @@ pAVL ajouterAVLAlphaDepart(pAVL a, char *ville, int RID, int *h){
   else{ // La ville est dejà dans l'AVL
     *h = 0;
     p1 = a->pliste;
-    a->nbdeparts++;
+    //a->nbdeparts++;
     while (p1->next != NULL){ // parcours de la liste des RIDs
       if (p1->nb == RID){ // si le RID est dejà dans la liste
         return a; // on ne fait rien
@@ -206,10 +207,10 @@ pAVL ajouterAVLAlphaArrivee(pAVL a, char *ville, int RID, int *h){
     *h = 0;
     p1 = a->pliste;
     while (p1->next != NULL){ // parcours de la liste des RIDs
-      if (p1->nb == RID){ 
+      /*if (p1->nb == RID){ 
       	a->nbdeparts = a->nbdeparts - 1;
         return a; // on ne fait rien
-      }
+      }*/
       p1 = p1->next;
     }
     p1->next = creerRID(RID); // ajoute le RID à la liste des RID traversant la ville
@@ -287,7 +288,26 @@ pAVL ajouterAVLTrie(pAVL racine, pAVL new, int *h){ // AVL Triage numérique cla
   return racine;
 }
 
-
+pAVL compteDepart(pAVL a, char* ville, int SID){
+  if (a == NULL){
+    printf("%s ne se trouve pas dans l'AVL\n", ville);
+    return NULL;
+  }
+  else if (strcmp(ville, a->ville) < 0){
+    a->fg = compteDepart(a->fg, ville, SID);
+  }
+  else if (strcmp(ville, a->ville) > 0){
+    a->fd = compteDepart(a->fd, ville,SID);
+  }
+  else{ // La ville est dejà dans l'AVL
+    if (SID==1){
+    	a->nbdeparts ++;
+    }
+    return a;
+  }
+ 
+  return a;
+}
 
 pAVL creerAVLTrie(pAVL racine, pAVL alpha, int *h){ // alpha = racine de l'AVL trie alphabetiquement
   
@@ -306,6 +326,8 @@ int main(){
   int x = 0;
   int i = 0;
   int *h = &x;
+  int SID;
+  char ville[50];
 
   // top10* pliste = NULL;
   pAVL AVLTrie = NULL;
@@ -313,8 +335,21 @@ int main(){
   FILE* fichier = fopen("departs.txt", "r");
   FILE* fichier2 = fopen("arrivees.txt", "r");
   FILE* fichier3 = fopen("T_Results.txt","a");
+  FILE* fichier4 = fopen("STEP.txt", "r");
 
   if (fichier == NULL){
+    printf("Erreur lors de l'ouverture du fichier");
+    exit(1);
+  }
+  if (fichier2 == NULL){
+    printf("Erreur lors de l'ouverture du fichier");
+    exit(1);
+  }
+  if (fichier3 == NULL){
+    printf("Erreur lors de l'ouverture du fichier");
+    exit(1);
+  }
+  if (fichier4 == NULL){
     printf("Erreur lors de l'ouverture du fichier");
     exit(1);
   }
@@ -324,12 +359,21 @@ int main(){
     //printf("str = %s\n", str);
     racine = ajouterAVLAlphaDepart(racine, str, RID, h);
   }
+  
+  printf ("AVL Alpha fini");
   //parcoursInfixe(racine);
   
   while (fscanf(fichier2, "%d; %[^\n] ", &RID, str) == 2){
     //printf("RID = %d\n", RID);
     //printf("str = %s\n", str);
-    racine = ajouterAVLAlphaArrivee(racine, str, RID, h);
+    racine = ajouterAVLAlphaDepart(racine, str, RID, &i);
+  }
+  //printf ("AVL Alpha fini\n");
+  
+  while (fscanf(fichier4, "%d; %[^\n]", &SID, ville)==2){
+ 	//printf("SID = %d\n", SID);
+	//printf("ville = %s\n", ville); 	
+	racine = compteDepart(racine, ville, SID);
   }
   
   //parcoursInfixe(racine);
@@ -340,6 +384,7 @@ int main(){
   fclose(fichier);
   fclose(fichier2);
   fclose(fichier3);
+  fclose(fichier4);
 
   return 0;
 }
