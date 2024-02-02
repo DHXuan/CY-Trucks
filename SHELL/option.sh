@@ -95,8 +95,5 @@ do
       	echo "Voici le message d'aide"
         cat explication.txt
       ;;
-    *)
-      echo "Option invalide : $arg. Les options valides sont -d1, -d2, -l, -t, -s, -h"
-      ;;
   esac
 done
