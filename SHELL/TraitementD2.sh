@@ -6,7 +6,7 @@ head -10 somme2.txt | awk '{print $1 " " $2 ";" $3}' >somme3.txt
 
 gnuplot<<EOF
 set terminal png font "helvetica, 10"
-set output "graphD2.png"
+set output "~/Images/graphD2.png"
 set style data histogram
 set view map
 set style histogram cluster gap 2 #je laisse une unité d'esp entre les barres 
