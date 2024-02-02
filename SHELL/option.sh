@@ -2,12 +2,12 @@
 
 file_path=$(find .. -iname "data.csv") 2>/dev/null
 Images_path=$(find . -type d -name "Images" -print -quit) 2>/dev/null
-Temps_path=$(find . -type d -name "Temps" -print -quit) 2>/dev/null
-traitementD1_path=$(find . -iname "traitementD1.sh" -print -quit) 2>/dev/null
-traitementD2_path=$(find . -iname "traitementD2.sh" -print -quit) 2>/dev/null
-traitementL_path=$(find . -iname "traitementL.sh" -print -quit) 2>/dev/null
-traitementS_path=$(find . -iname "traitementS.sh" -print -quit) 2>/dev/null
-traitementT_path=$(find . -iname "traitementT.sh" -print -quit) 2>/dev/null
+Temps_path=$(find . -type d -name "temp" -print -quit) 2>/dev/null
+traitementD1_path=$(find . -iname "TraitementD1.sh" -print -quit) 2>/dev/null
+traitementD2_path=$(find . -iname "TraitementD2.sh" -print -quit) 2>/dev/null
+traitementL_path=$(find . -iname "TraitementL.sh" -print -quit) 2>/dev/null
+traitementS_path=$(find . -iname "TraitementS.sh" -print -quit) 2>/dev/null
+traitementT_path=$(find . -iname "TraitementT.sh" -print -quit) 2>/dev/null
 
 chmod +x option.sh
 
