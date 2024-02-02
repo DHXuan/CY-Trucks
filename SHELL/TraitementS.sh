@@ -1,7 +1,7 @@
 #!/bin/bash
 
-gcc -o yy SE1.c
-gcc -o zz SE2.c
+gcc -o yy ~/PartieC/SE1.c
+gcc -o zz ~/PartieC/SE2.c
 
 start_time=$(date +%s.%s)
 awk -F";" '
@@ -69,4 +69,4 @@ echo "Temps écoulé : $elapsed_time secondes"
 
 rm donnees.txt
 rm StatsTrajets.txt
-rm ResultFinalStats.txt     
+rm ResultFinalStats.txt 
