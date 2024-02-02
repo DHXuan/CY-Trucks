@@ -25,3 +25,4 @@ AVANT DE LANCER : Créer un dossier PartieC contenant les différents programmes
 
 Placer ce dossier (PartieC) dans le même répertoire contenant les traitements (TraitementS.sh, TraitementT.sh, TraitementD1.sh, etc).
 
+Si vous rencontrez un problème lié à l'ouverture des graphiques, l'ouvrir à l'aide d'un navigateur pourrait résoudre le problème.
