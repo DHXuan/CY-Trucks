@@ -14,7 +14,7 @@ head -10 T_Results.txt > 10T_Results.txt
 
 gnuplot<<EOF
 set terminal png font "helvetica, 10" size 800,800
-set output "graphT.png"
+set output "~/Images/graphT.png"
 set style data histogram
 set style histogram cluster gap 2 #je laisse une unité d'esp entre les barres 
 set style fill solid border -1 #bordure des barres
